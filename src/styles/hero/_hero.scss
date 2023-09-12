@@ -1,0 +1,31 @@
+@use "../global/typography" as *;
+#home {
+  height: 100vh;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(0deg, #0f051d 30%, #130749 70%);
+  padding: 5rem 0;
+}
+#hero {
+  height: 100vh;
+  .hero__container {
+    padding: 2rem 0;
+    h1 {
+      font-size: $h1-size;
+      text-align: center;
+    }
+    .hero__title {
+      display: flex;
+      justify-content: space-between;
+      img {
+        width: 5rem;
+        height: 5rem;
+      }
+      &__h {
+        text-align: center;
+        margin-top: 3rem;
+        font-size: 5rem;
+      }
+    }
+  }
+}
