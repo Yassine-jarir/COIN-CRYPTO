@@ -61,6 +61,9 @@ function Hero({ setnavcolor }) {
               })
             )}
           </div>
+          <a href="" className="hero__container__mobileapi">
+            See Prices{" "}
+          </a>
         </div>
       </motion.div>
     </section>

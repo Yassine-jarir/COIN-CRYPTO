@@ -15,11 +15,14 @@
       text-align: center;
       margin-top: 2rem;
       @media (max-width: $br-sm) {
-        font-size: $h2-md;
-        margin: auto;
+        // font-size: $h2-md;
+        // margin: auto;
+        font-size: 3.2rem;
+        margin: 2rem auto;
       }
       @media (max-width: $br-xm) {
-        font-size: $h4-size;
+        font-size: 3.2rem;
+        margin: 2rem auto;
       }
     }
     .hero__title {
@@ -48,12 +51,13 @@
       }
     }
     .hero__api {
-      display: flex;
       justify-content: space-between;
       width: 85%;
       text-align: center;
       margin: auto;
       margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
       &__box {
         display: flex;
         flex-direction: column;
@@ -80,6 +84,27 @@
           }
         }
       }
+      @media (max-width: ($br-sm)) {
+        display: none !important;
+      }
+    }
+    &__mobileapi {
+      align-items: center;
+      background: linear-gradient(25deg, #2600fc, #ff00ea);
+      border-radius: 10rem;
+      color: #f3f2f4;
+      display: none;
+      font-size: 1.7rem;
+      font-weight: 600;
+      gap: 1rem;
+      justify-content: center;
+      margin: 3rem auto 0;
+      padding: 1rem 4rem;
+      text-align: center;
+      transition: all 0.2s;
+      width: 19rem;
+      display: flex;
+      align-items: center;
     }
   }
 }
