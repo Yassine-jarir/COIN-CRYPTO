@@ -13,6 +13,14 @@
     h1 {
       font-size: $h1-size;
       text-align: center;
+      margin-top: 2rem;
+      @media (max-width: $br-sm) {
+        font-size: $h2-md;
+        margin: auto;
+      }
+      @media (max-width: $br-xm) {
+        font-size: $h4-size;
+      }
     }
     .hero__title {
       display: flex;
@@ -20,6 +28,18 @@
       img {
         width: 5rem;
         height: 5rem;
+        animation: imgannim infinite 2s;
+        @keyframes imgannim {
+          50% {
+            transform: translateY(-20px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+        @media (max-width: $br-sm) {
+          display: none;
+        }
       }
       &__h {
         text-align: center;
@@ -27,5 +47,72 @@
         font-size: 5rem;
       }
     }
+    .hero__api {
+      display: flex;
+      justify-content: space-between;
+      width: 85%;
+      text-align: center;
+      margin: auto;
+      margin-top: 3rem;
+      &__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        cursor: pointer;
+        min-width: 14rem;
+        transition: all 0.3s;
+        &:hover {
+          background-color: #12073d;
+          border-radius: 33px;
+        }
+        img {
+          width: 7rem;
+        }
+        p {
+          font-size: 1.2rem;
+          font-weight: 600;
+          margin-top: 0.5rem;
+          span {
+            color: #0ecb81 !important;
+          }
+        }
+      }
+    }
+  }
+}
+//loader
+.loader {
+  margin: 10rem auto;
+  width: 64px;
+  height: 64px;
+  position: relative;
+  background-image: linear-gradient(#fff 16px, transparent 0),
+    linear-gradient(#ff00ea 16px, transparent 0),
+    linear-gradient(#ff00ea 16px, transparent 0),
+    linear-gradient(#fff 16px, transparent 0);
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: left top, left bottom, right top, right bottom;
+  animation: rotate 1s linear infinite;
+  display: block;
+}
+@keyframes rotate {
+  0% {
+    width: 64px;
+    height: 64px;
+    transform: rotate(0deg);
+  }
+  50% {
+    width: 30px;
+    height: 30px;
+    transform: rotate(180deg);
+  }
+  100% {
+    width: 64px;
+    height: 64px;
+    transform: rotate(360deg);
   }
 }
