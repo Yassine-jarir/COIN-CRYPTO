@@ -1,3 +1,132 @@
+@use "../global/typography" as *;
 #market {
-  height: 100vh;
+  background-color: #0f051d;
+  // height: 100vh;
+  .market__h1 {
+    padding: 2rem 0;
+  }
+}
+.market {
+  &__tab {
+    display: flex;
+    flex-direction: column;
+    @media (max-width: ($br-sm)) {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      overflow-x: auto;
+      white-space: nowrap;
+      width: 100%;
+    }
+    &__header {
+      @media (max-width: ($br-sm)) {
+        width: fit-content;
+      }
+      display: flex;
+      justify-content: space-between;
+      background: linear-gradient(25deg, #2600fc, #ff00ea);
+      padding: 1rem;
+      border-radius: 1rem 1rem 0 0;
+      .p {
+        width: fit-content;
+        @media (max-width: ($br-sm)) {
+          width: 10rem;
+        }
+      }
+    }
+    &__apicontainer {
+      @media (max-width: ($br-sm)) {
+        width: fit-content;
+      }
+      text-align: center;
+      align-items: center;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      .coin-row {
+        width: 100%;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 700;
+        padding: 1rem 0;
+        border-bottom: 1px solid white;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(1fr, 1fr));
+        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        transition: all 0.3s;
+        &:hover {
+          background-color: rgb(18, 7, 61);
+        }
+        span {
+          display: flex;
+
+          align-items: center;
+          width: 100%;
+          img {
+            width: 5rem;
+            padding: 1rem;
+          }
+          .green-text {
+            color: lightseagreen;
+          }
+          .red-text {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
+.pagination__container {
+  max-width: 40rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  align-items: center;
+  margin: auto;
+  @media (max-width: ($br-xm)) {
+    padding: 2rem 0;
+  }
+  li {
+    padding: 0.8rem;
+    @media (max-width: ($br-xm)) {
+      padding: 0rem;
+    }
+    a {
+      cursor: pointer;
+      cursor: pointer;
+      color: #bababa;
+      background: #242424;
+      padding: 0.7rem;
+      border-radius: 7px;
+      &:hover {
+        background: #2f2f2f;
+      }
+    }
+    .orangeBtn {
+      background-color: #f90 !important;
+      color: #000;
+      padding: 0.5rem;
+      width: auto;
+      /* line-height: 55px; */
+      border: 0;
+      border-radius: 7px;
+      font-size: 1.4rem;
+      font-weight: lighter;
+      min-width: 14rem;
+      cursor: pointer;
+      background: #2f2f2f;
+
+      &:hover {
+        background-color: #ff9f0e !important
+        ;
+      }
+    }
+    .grayBtn {
+      @media (max-width: ($br-xm)) {
+        padding: 0rem;
+      }
+    }
+  }
 }

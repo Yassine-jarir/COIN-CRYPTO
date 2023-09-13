@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 // eslint-disable-next-line react/prop-types
 function Hero({ setnavcolor }) {
-  const [response, setresponse] = useState(null);
+  const [response, setresponse] = useState([]);
   const [loading, setloading] = useState(false);
   const [err, seterr] = useState("");
 
@@ -16,19 +16,16 @@ function Hero({ setnavcolor }) {
         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=4&page=1&sparkline=false"
       );
       setresponse(data.data);
+      setloading(false);
     } catch (error) {
       seterr(error);
-    } finally {
-      setloading(false);
+      console.log(err);
     }
   };
 
   useEffect(() => {
     fetchdata();
   }, []);
-  console.log(response);
-  console.log(err);
-  console.log(loading);
   return (
     <section id="hero">
       <motion.div
@@ -42,13 +39,15 @@ function Hero({ setnavcolor }) {
             <img src={etr} alt="" className="hero__imgannim" />
           </div>
           <h1 className="navtarget">CRYPTO CURRENCIES</h1>
-          <div className="hero__api">
-            {loading ? (
+          {loading ? (
+            <div className="loadercontainer heromobileloader">
               <span className="loader"></span>
-            ) : (
-              response?.map((item) => {
+            </div>
+          ) : (
+            <div className="hero__api">
+              {response?.map((item) => {
                 return (
-                  <div key={item?.id} className="hero__api__box">
+                  <div className="hero__api__box" key={item?.id}>
                     <img src={item.image} alt="" />
 
                     <p>
@@ -58,9 +57,9 @@ function Hero({ setnavcolor }) {
                     <p>$ {item.price_change_24h}</p>
                   </div>
                 );
-              })
-            )}
-          </div>
+              })}
+            </div>
+          )}
           <a href="" className="hero__container__mobileapi">
             See Prices{" "}
           </a>

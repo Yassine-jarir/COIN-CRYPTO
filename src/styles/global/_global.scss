@@ -20,7 +20,9 @@ body {
 a {
   text-decoration: none;
 }
-
+li {
+  list-style: none;
+}
 .container {
   max-width: 130rem !important;
   margin: 0 auto !important;
@@ -34,6 +36,49 @@ button {
   border: none;
   cursor: pointer;
 }
-// i{
-//   font-size: 1.2rem;
-// }
+//loader
+.loadercontainer {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+@media (max-width: $br-sm) {
+  .heromobileloader {
+    display: none !important;
+  }
+}
+.loader {
+  margin: 10rem auto;
+  width: 64px;
+  height: 64px;
+  position: relative;
+  background-image: linear-gradient(#fff 16px, transparent 0),
+    linear-gradient(#ff00ea 16px, transparent 0),
+    linear-gradient(#ff00ea 16px, transparent 0),
+    linear-gradient(#fff 16px, transparent 0);
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: left top, left bottom, right top, right bottom;
+  animation: rotate 1s linear infinite;
+  display: block;
+}
+@keyframes rotate {
+  0% {
+    width: 64px;
+    height: 64px;
+    transform: rotate(0deg);
+  }
+  50% {
+    width: 30px;
+    height: 30px;
+    transform: rotate(180deg);
+  }
+  100% {
+    width: 64px;
+    height: 64px;
+    transform: rotate(360deg);
+  }
+}
