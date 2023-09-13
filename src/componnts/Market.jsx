@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
-import { responseTest } from "../api/jsonapi";
+// import { responseTest } from "../api/jsonapi";
 
 // eslint-disable-next-line react/prop-types
 function Market({ setnavcolor }) {
@@ -12,12 +12,12 @@ function Market({ setnavcolor }) {
   const [loading, setloading] = useState(false);
   const fetchData = async () => {
     try {
-      // setloading(true);
+      setloading(true);
       const res = await axios.get(
         `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=${currentPage}&sparkline=false&locale=en`
       );
       setresponse(res.data);
-      // setloading(false);
+      setloading(false);
     } catch (error) {
       console.log(error);
     }
@@ -25,11 +25,9 @@ function Market({ setnavcolor }) {
   useEffect(() => {
     fetchData();
   }, [currentPage]);
-  console.log(response);
 
   const handlePageClick = ({ selected }) => {
     setcurrentPage(selected + 1);
-    console.log(selected + 1);
   };
 
   return (
@@ -53,7 +51,7 @@ function Market({ setnavcolor }) {
             </div>
           )}
           <div className="market__tab__apicontainer">
-            {responseTest?.map((item) => (
+            {response?.map((item) => (
               <Link
                 // to={`/coin/${item.id}`}
                 className="coin-row"
