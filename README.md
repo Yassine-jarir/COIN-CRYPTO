@@ -7,12 +7,22 @@ The website is connected to the Coingecko API, which is a popular source of data
 
 # Build with:
 
-» React JS
-» SCSS
-» Coingecko API
+» React JS </br>
+» SCSS </br>
+» Coingecko API </br>
 
 # Screenshots of the Project 📸
 
-# Home Page 🏡
+<div align="center">
+ <h3>Home Page 🏡</h3> 
+</div>
+ 
+![Alt Text](<https://github.com/Yassine-jarir/COIN-CRYPTO/blob/55d057a840925aa8c1b99b56759dff5fa9f9083c/src/assets/Vite-Reacst.png>)
 
-<img src="../coin-crypto/src/assets/Vite-Reacst.png/>
+
+
+<div align="center">
+ <h3> Coin Page 🏡</h3> 
+</div> 
+
+![Alt Text](<https://github.com/Yassine-jarir/COIN-CRYPTO/blob/55d057a840925aa8c1b99b56759dff5fa9f9083c/src/assets/Vite-React.png>)
