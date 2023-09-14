@@ -1,0 +1,57 @@
+@use "../global/typography" as *;
+#join {
+  height: 100vh;
+  background-color: #0f051d;
+}
+.join__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  @media (max-width: ($br-xm)) {
+    justify-content: center !important;
+  }
+  &__text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .join__h2 {
+      text-align: center;
+      font-size: 6rem;
+      span {
+        -webkit-background-clip: text;
+        background-image: linear-gradient(25deg, #2600fc, #ff00ea);
+        color: transparent;
+      }
+    }
+    .linkjoin {
+      background: linear-gradient(25deg, #2600fc, #ff00ea);
+      border-radius: 10rem;
+      color: #f3f2f4;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 2rem 4rem;
+      transition: all 0.2s;
+      margin-top: 3rem;
+    }
+  }
+  .join__imgannim {
+    width: 5rem;
+    height: 5rem;
+    animation: imgannim infinite 2s;
+    @keyframes imgannim {
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    @media (max-width: $br-sm) {
+      display: none;
+    }
+  }
+}

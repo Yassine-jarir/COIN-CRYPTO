@@ -29,7 +29,7 @@
     .hero__title {
       display: flex;
       justify-content: space-between;
-      img {
+      .hero__imgannim {
         width: 5rem;
         height: 5rem;
         animation: imgannim infinite 2s;
