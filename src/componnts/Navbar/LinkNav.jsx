@@ -1,7 +1,7 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 // eslint-disable-next-line react/prop-types
-function Link({ page, navcolor, setnavcolor }) {
+function LinkNav({ page, navcolor, setnavcolor }) {
   return (
     <>
       <AnchorLink
@@ -15,4 +15,4 @@ function Link({ page, navcolor, setnavcolor }) {
   );
 }
 
-export default Link;
+export default LinkNav;

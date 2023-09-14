@@ -12,7 +12,10 @@ function App() {
         <NavBar navcolor={navcolor} setnavcolor={setnavcolor} />
         <Routes>
           <Route path="/" element={<Home setnavcolor={setnavcolor} />} />
-          <Route path="coins" element={<CoinDetails />} />
+          <Route
+            path="coin/:id"
+            element={<CoinDetails setnavcolor={setnavcolor} />}
+          />
         </Routes>
       </BrowserRouter>
     </>

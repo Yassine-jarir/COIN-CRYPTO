@@ -27,6 +27,9 @@ li {
   max-width: 130rem !important;
   margin: 0 auto !important;
   padding: 0 2.5rem !important;
+  @media (max-width: ($br-xm)) {
+    padding: 0 1.5rem !important;
+  }
 }
 .navtarget {
   color: red;
@@ -80,5 +83,14 @@ button {
     width: 64px;
     height: 64px;
     transform: rotate(360deg);
+  }
+}
+.homeh1 {
+  color: #f3f2f4;
+  font-family: Noto Sans Georgian, sans-serif;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  @media (max-width: ($br-sm)) {
   }
 }

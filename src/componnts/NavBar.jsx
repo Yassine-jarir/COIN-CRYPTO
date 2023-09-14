@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import useMediaQuery from "../hooks/UseMediaquery";
-import Link from "./Navbar/Link";
-
+import LinkNav from "./Navbar/LinkNav";
+import { Link } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
 function NavBar({ navcolor, setnavcolor }) {
   const isAboveMediumScreens = useMediaQuery("(min-width:650px)");
@@ -26,33 +26,37 @@ function NavBar({ navcolor, setnavcolor }) {
   return (
     <nav className={scrol ? "navscroll" : ""}>
       <div className="container navbar">
-        <h1>COIN</h1>
+        <h1>
+          <Link style={{ color: "white" }} to="/">
+            COIN
+          </Link>
+        </h1>
         {isAboveMediumScreens ? (
           <>
             <ul className="nav__ul">
               <li>
-                <Link
+                <LinkNav
                   setnavcolor={setnavcolor}
                   navcolor={navcolor}
                   page="hero"
                 />
               </li>
               <li>
-                <Link
+                <LinkNav
                   setnavcolor={setnavcolor}
                   navcolor={navcolor}
                   page="market"
                 />
               </li>
               <li>
-                <Link
+                <LinkNav
                   setnavcolor={setnavcolor}
                   navcolor={navcolor}
-                  page="chooseus"
+                  page="whyus"
                 />
               </li>
               <li>
-                <Link
+                <LinkNav
                   setnavcolor={setnavcolor}
                   navcolor={navcolor}
                   page="join"
@@ -93,28 +97,28 @@ function NavBar({ navcolor, setnavcolor }) {
 
             <ul className="nav__ul">
               <li>
-                <Link
+                <LinkNav
                   setnavcolor={setnavcolor}
                   navcolor={navcolor}
                   page="hero"
                 />
               </li>
               <li>
-                <Link
+                <LinkNav
                   setnavcolor={setnavcolor}
                   navcolor={navcolor}
                   page="market"
                 />
               </li>
               <li>
-                <Link
+                <LinkNav
                   setnavcolor={setnavcolor}
                   navcolor={navcolor}
-                  page="chooseus"
+                  page="whyus"
                 />
               </li>
               <li>
-                <Link
+                <LinkNav
                   setnavcolor={setnavcolor}
                   navcolor={navcolor}
                   page="join"

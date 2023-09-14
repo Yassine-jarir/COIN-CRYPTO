@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
-// import { responseTest } from "../api/jsonapi";
+import { responseTest } from "../api/jsonapi";
 
 // eslint-disable-next-line react/prop-types
 function Market({ setnavcolor }) {
@@ -52,11 +52,7 @@ function Market({ setnavcolor }) {
           )}
           <div className="market__tab__apicontainer">
             {response?.map((item) => (
-              <Link
-                // to={`/coin/${item.id}`}
-                className="coin-row"
-                key={item.id}
-              >
+              <Link to={`coin/${item.id}`} className="coin-row" key={item.id}>
                 <span className="imgtext">
                   <img src={item.image} alt={item.name} /> {item.name}
                 </span>

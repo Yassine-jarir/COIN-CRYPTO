@@ -1,0 +1,54 @@
+@use "../global/typography" as *;
+#whyus {
+  // height: 100vh;
+  background-color: #0f051d;
+  padding: 4rem 0;
+}
+
+.whyus__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  @media (max-width: ($br-sm)) {
+    flex-direction: column;
+  }
+  .whyusimg {
+    img {
+      width: 9rem;
+    }
+  }
+  &__box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4rem;
+    // align-items: center;
+    .whybox {
+      display: flex;
+      gap: 2rem;
+      background-color: hsla(0, 0%, 100%, 0.05);
+      border: 1px solid hsla(0, 0%, 51%, 0.25);
+      border-radius: 2.4rem;
+      @media (max-width: ($br-sm)) {
+        min-width: 100%;
+      }
+      .ibox {
+        font-size: 3rem;
+        align-items: center;
+        background: linear-gradient(25deg, #2600fc, #ff00ea);
+        border-radius: 1.6rem;
+        display: flex;
+        height: 6rem;
+        padding: 1.5rem;
+        width: 6rem;
+        text-align: center;
+      }
+      .whybox__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+}

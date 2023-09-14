@@ -3,6 +3,7 @@ import btc from "../assets/hero/bitcoin.png";
 import etr from "../assets/hero/ethereum.png";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
 function Hero({ setnavcolor }) {
   const [response, setresponse] = useState([]);
@@ -47,15 +48,20 @@ function Hero({ setnavcolor }) {
             <div className="hero__api">
               {response?.map((item) => {
                 return (
-                  <div className="hero__api__box" key={item?.id}>
-                    <img src={item.image} alt="" />
+                  <Link
+                    className="hero__api__box"
+                    key={item?.id}
+                    style={{ color: "white" }}
+                    to={`coin/${item?.id}`}
+                  >
+                    <img src={item?.image} alt="" />
 
                     <p>
                       {item?.name}{" "}
-                      <span>{item.market_cap_change_percentage_24h}%</span>
+                      <span>{item?.market_cap_change_percentage_24h}%</span>
                     </p>
-                    <p>$ {item.price_change_24h}</p>
-                  </div>
+                    <p>$ {item?.price_change_24h}</p>
+                  </Link>
                 );
               })}
             </div>
