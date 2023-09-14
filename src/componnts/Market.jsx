@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
-import { responseTest } from "../api/jsonapi";
 
 // eslint-disable-next-line react/prop-types
 function Market({ setnavcolor }) {
