@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import Whybox from "./whybox";
+import Whybox from "./Whybox";
 import BitHand from "../assets/chooseus/choose-main.png";
+
 // eslint-disable-next-line react/prop-types
 function WhyUs({ setnavcolor }) {
   return (
